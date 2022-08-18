@@ -22,3 +22,13 @@ class ProductPage(BasePage):
             *ProductPageLocators.PRODUCT_PRICE).text == \
                self.browser.find_element(
                    *ProductPageLocators.PRODUCT_PRICE_IN_BASKET).text, 'PRODUCT IS NOT IN BASKET'
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(
+            *ProductPageLocators.PRODUCT_NAME_IN_BASKET), \
+            "Success message is presented, but should not be"
+
+    def should_not_be_success_message_disappeared(self):
+        assert self.is_disappeared(
+            *ProductPageLocators.PRODUCT_NAME_IN_BASKET), \
+            "Success message is presented, but should not be"
