@@ -9,8 +9,6 @@ class BasketPage(BasePage):
             "Busket is not empty!"
 
     def should_be_empty_basket_message(self):
-        empty_basket = self.browser.find_element(
-            *BasketPageLocators.BASKET_IS_EMPTY).text
-        assert not self.is_not_element_present(
-            *BasketPageLocators.BASKET_IS_EMPTY) and empty_basket, \
+        assert self.is_element_present(
+            *BasketPageLocators.BASKET_IS_EMPTY), \
             "Basket is not empty, but should be!"
