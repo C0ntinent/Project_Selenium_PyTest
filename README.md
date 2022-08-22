@@ -16,8 +16,7 @@ python -m venv venv
 python -m pip install -r requirements.txt
 ```
 🔵 Убедитесь, что путь к chromedriver.exe прописан в PATH, либо скопируйте этот файл в папку Project_Selenium_PyTest/venv/Scripts  
-🔵 Перейдите в папку с тестами и запустите тесты для ревью:
+🔵 Запустите тесты для ревью:
 ```bash
-cd tests
 pytest -v --tb=line --language=en -m need_review
 ```
